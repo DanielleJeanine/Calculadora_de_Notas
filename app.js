@@ -1,13 +1,12 @@
 function notas(){
 
-    let listaAlunos = [ ["Roberta", "1001"],
-                        ["Danielle", "1002"], 
-                        ["Pedro", "1002"],
-                        ["Marcos", "1001"],
-                        ["Felipe", "1001"],
-                        ["Arthur", "1002"]]; 
-
-    listaCompleta = ""
+    let listaAlunos = ["Roberta", "Danielle", "Pedro", "Marcos", "Felipe", "Arthur"];
+    let listaTurma = ["1001", "1002","1003", "1004"];
+    let listaNota1 = [];
+    let listaNota2 = [];                     
+    let listaMedia = [];
+    let quantidadeAluno = listaAlunos.length;
+    
 
         
     
@@ -55,51 +54,91 @@ function notas(){
     }
 
     function listarAlunos(){
-        for(let i =0;i<listaAlunos.length; i++ ){
-            //listaCompleta = listaCompleta + (i+1) + listaAlunos[i] + "\"
-            
-            let aluno = listaAlunos[i];
-           alert(listaAlunos);
 
+        for(let i = 0; i < listaAlunos.length; i++){
+           console.log(i + " Aluno: " + listaAlunos[i] + " Turma: " + listaTurma[i]);
 
         }
+        // for(let i =0;i<listaAlunos.length; i++ ){
+        //     //listaCompleta = listaCompleta + (i+1) + listaAlunos[i] + "\"
+            
+        //     let aluno = listaAlunos[i];
+        //    con(listaAlunos);
+
+
+        // }
 
         return listaAlunos;
+        console.log(listaAlunos[2])
 
     }
 
     function adiconarAluno() {
+        let nomeAluno = prompt("Informe o nome do aluno: ");
+        listaAlunos.push(nomeAluno);
+        let turma = prompt("Informe a turma: ");
+        listaTurma.push(turma);
 
-    }
+     }
+        
+
+    
 
     function excluirAluno() {
 
+        let excluir =  [  listaAlunos ]
+        
+        excluir.splice( 1,1 )
+        alert(excluir)
+        console.log (excluir) // "excluir" tente novamente
+         
     }
 
     function editarAluno() {
 
     }
+
+    function adiconarNota(){
+
+        let numeroAluno = parseInt(prompt("Informe o número aluno: "));
+        let nota1 = parseFloat(prompt("Informe a primeira nota:"));
+        let nota2 = parseFloat(prompt("Informe a segunda nota: "));
+        let media = ( nota1 + nota2) /2;
+        
+        listaNota1[numeroAluno] = nota1;
+        listaNota2[numeroAluno] = nota2;
+        listaMedia[numeroAluno] = media;
+
+        console.log("Aluno: " + listaAlunos[numeroAluno] + " Nota 1: " + listaNota1[numeroAluno] + " Nota 2: " + listaNota2[numeroAluno] + " Media" + listaMedia[numeroAluno])
+    }
+
+    notas()
+
+
     
-    menuInicial();
+   //menuInicial();
 }
 
-function media(){
+// function media(){
 
-    let media =( nota1 + nota2) /2;
+//     let media =;
 
-    if(media>=6) {
-        (alert(`aprovado`))
-    }else {
-        alert(`reprovado` )};
+//     if(media>=6) {
+//         (alert(`aprovado`))
+//     }else {
+//         alert(`reprovado` )};
 
     
 
 
-}
+// }
 
 
 
 
 
 notas();
+
+
+
 
